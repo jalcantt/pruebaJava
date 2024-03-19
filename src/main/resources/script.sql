@@ -19,7 +19,7 @@ BEGIN
 
     -- Abrir el cursor para devolver los datos del producto insertado
     OPEN p_cursor FOR
-        SELECT * FROM productos WHERE id = p_id;
+        SELECT * FROM productos WHERE TRUNC(fec_registro) =  TRUNC(CURRENT_DATE);
 
     -- Asignar valores para los parámetros de salida
     p_codigo := 0; -- Código de éxito

@@ -40,7 +40,7 @@ public class ProductoRepository {
                         Producto producto1 = new Producto();
                         producto1.setId(rs.getInt(1));
                         producto1.setNombre(rs.getString(2));
-                        producto1.setFechaResgistro(rs.getDate(3));
+                        producto1.setFechaResgistro(String.valueOf(rs.getDate(3)));
 
                         return producto1;
                     }

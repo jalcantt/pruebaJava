@@ -9,12 +9,12 @@ import java.util.Date;
 public class Producto {
     private Integer id;
     private String nombre;
-    private Date fechaResgistro;
+    private String fechaResgistro;
 
     public Producto() {
     }
 
-    public Producto(Integer id, String nombre, Date fechaResgistro) {
+    public Producto(Integer id, String nombre, String fechaResgistro) {
         this.id = id;
         this.nombre = nombre;
         this.fechaResgistro = fechaResgistro;
@@ -36,11 +36,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public Date getFechaResgistro() {
+    public String getFechaResgistro() {
         return fechaResgistro;
     }
 
-    public void setFechaResgistro(Date fechaResgistro) {
+    public void setFechaResgistro(String fechaResgistro) {
         this.fechaResgistro = fechaResgistro;
     }
 }
