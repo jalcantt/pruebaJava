@@ -1,11 +1,14 @@
+CREATE SEQUENCE secuencia_id
+  START WITH 1
+  INCREMENT BY 1;
 CREATE TABLE productos (
-    id NUMBER,
+    id NUMBER DEFAULT secuencia_id.NEXTVAL PRIMARY KEY,
     nombre VARCHAR2(255),
     fec_registro DATE
 );
 
 CREATE OR REPLACE PROCEDURE sp_ejemplo (
-    p_id IN NUMBER,
+ --   p_id IN NUMBER,
     p_nombre IN VARCHAR2,
     p_fec_registro IN DATE,
     p_cursor OUT SYS_REFCURSOR,
@@ -14,8 +17,8 @@ CREATE OR REPLACE PROCEDURE sp_ejemplo (
 ) AS
 BEGIN
     -- Insertar el nuevo producto en la tabla
-    INSERT INTO productos (id, nombre, fec_registro)
-    VALUES (p_id, p_nombre, p_fec_registro);
+    INSERT INTO productos ( nombre, fec_registro)
+    VALUES ( p_nombre, p_fec_registro);
 
     -- Abrir el cursor para devolver los datos del producto insertado
     OPEN p_cursor FOR

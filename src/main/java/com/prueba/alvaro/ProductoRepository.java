@@ -47,7 +47,7 @@ public class ProductoRepository {
                 });
 
         MapSqlParameterSource inParams = new MapSqlParameterSource()
-                .addValue("p_id", producto.getId())
+             //   .addValue("p_id", null)
                 .addValue("p_nombre", producto.getNombre())
                 .addValue("p_fec_registro", producto.getFechaResgistro());
 
